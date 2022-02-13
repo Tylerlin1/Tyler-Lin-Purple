@@ -249,9 +249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7952644d1abcf2b43b5cbf364f169992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverCanvas: {fileID: 0}
-  scoreCanvas: {fileID: 0}
-  spawner: {fileID: 0}
+  gameOverCanvas: {fileID: 952778814}
+  scoreCanvas: {fileID: 1140914662}
+  spawner: {fileID: 922361846}
 --- !u!1 &895681216
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +377,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestruction: 8
+--- !u!1 &952778814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5669031248249767612, guid: 1fbc2b56f4b4cad41b29960ac8b40776, type: 3}
+  m_PrefabInstance: {fileID: 5669031246613376450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1110401810
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,6 +464,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1140914662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4420568018785244674, guid: dc49c544ac07fab4799df520a69aa565, type: 3}
+  m_PrefabInstance: {fileID: 4420568019049001625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1380592595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -750,7 +760,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2092761010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
-  velocity: 1
+  velocity: 5
 --- !u!212 &2092761011
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -837,6 +847,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4420568018548789634, guid: dc49c544ac07fab4799df520a69aa565, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 275
+      objectReference: {fileID: 0}
     - target: {fileID: 4420568018785244674, guid: dc49c544ac07fab4799df520a69aa565, type: 3}
       propertyPath: m_Name
       value: Score Canvas
@@ -1037,7 +1051,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5826806107332298677, guid: 1fbc2b56f4b4cad41b29960ac8b40776, type: 3}
   m_PrefabInstance: {fileID: 5669031246613376450}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 952778814}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e4cf276accd1864ab16bb60d0d26acc, type: 3}

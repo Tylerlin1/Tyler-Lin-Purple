@@ -9,7 +9,7 @@ public class PlayerControls : MonoBehaviour
     [Header("Game Controller Object for controlling the game")]
     public GameController gameController;
     [Header("Default Velocity")]
-    public float velocity = 5;
+    public float velocity;
     //Physics for the bird
     private Rigidbody2D rb;
     //Height of the bird object on the y axis
@@ -49,7 +49,7 @@ public class PlayerControls : MonoBehaviour
 
 
             //Game Over function is called from the game manager
-            GameObject.Find("GameController").GetConponent<GameController>().GameOver();
+            GameObject.Find("GameController").GetComponent<GameController>().GameOver();
         }
     }
 }
