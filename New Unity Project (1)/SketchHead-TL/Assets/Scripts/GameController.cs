@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         //Integer i equals 1000
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 10; i++)
         {
             //Execute SpawnPlatforms
             SpawnPlatforms();
