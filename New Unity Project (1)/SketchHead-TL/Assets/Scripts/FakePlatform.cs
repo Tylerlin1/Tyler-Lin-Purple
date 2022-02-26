@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerControls1 : MonoBehaviour
 {
     //Rigidbody2D object that is stored
     [Header("Rigidbody")]
