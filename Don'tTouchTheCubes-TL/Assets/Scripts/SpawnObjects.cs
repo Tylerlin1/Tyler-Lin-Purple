@@ -13,13 +13,22 @@ public class SpawnObjects : MonoBehaviour
     //TIme for the next cube
     //to be spawned
     float spawn;
+    int i =0 ;
+
+
     // Update is called once per frame
     void Update()
     {
+        i++; 
+        if (i > 10000){
+            i = 0;
+            return;
+        }
         //The next cube to be spawned will
         //be based on the difficulty and
         //game speed
         spawn = difficulty * Time.deltaTime;
+        spawn = 1;
         //Difficulty of the game is based of 
         //speed of the game times 4
         difficulty = Time.deltaTime * 4;
