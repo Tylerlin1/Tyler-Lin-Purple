@@ -19,9 +19,13 @@ public class SpawnObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        i++; 
-        if (i > 10000){
+        i++;
+        if (i > 100)
+        {
             i = 0;
+        }
+        else
+        {
             return;
         }
         //The next cube to be spawned will
