@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log("stillrunning");
+    
     }
 
     //Spawn function
