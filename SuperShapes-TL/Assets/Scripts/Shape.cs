@@ -34,8 +34,8 @@ public class Shape : MonoBehaviour
         {
             //Destroy object
             Destroy(gameObject);
+            //Add 1 to score
+            Score.score++;
         }
-        //Add 1 to score
-        Score.score++;
     }
 }

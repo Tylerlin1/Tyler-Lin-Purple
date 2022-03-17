@@ -16,7 +16,7 @@ public class Score : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Text UI component equals to 
         //score as string

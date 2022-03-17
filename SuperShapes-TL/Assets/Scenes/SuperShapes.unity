@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859dc0283f4d37d41b7b7695e2d361be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -260,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859dc0283f4d37d41b7b7695e2d361be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 0
 --- !u!1 &524834318
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69b5a5069339314b8cf1115fa71ac8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 600
+  moveSpeed: 300
 --- !u!58 &995833432
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -570,7 +572,7 @@ GameObject:
   - component: {fileID: 1162204793}
   - component: {fileID: 1162204792}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

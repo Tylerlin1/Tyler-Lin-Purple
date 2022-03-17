@@ -23,7 +23,7 @@ public class PlayerControls : MonoBehaviour
         //axis movement(Left or right)
         movement = Input.GetAxisRaw("Horizontal");
     }
-
+    
     private void FixedUpdate()
     {
         //Object transformation rotates around
@@ -35,6 +35,7 @@ public class PlayerControls : MonoBehaviour
     //collider with a trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("hi");
         //Game Over function is called from the game manager
         GameObject.Find("GameController").GetComponent<GameController>().GameOver();
     }
