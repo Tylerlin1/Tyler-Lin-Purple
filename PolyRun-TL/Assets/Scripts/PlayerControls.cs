@@ -27,7 +27,7 @@ public class PlayerControls : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //If the spacebar is pressed and 
         //object is on the ground and 
@@ -40,6 +40,9 @@ public class PlayerControls : MonoBehaviour
             //gravity
             rb.AddForce(Vector3.up * (jumpPower * rb.mass * rb.gravityScale * 20.0f));
         }
+        //If the player position is less than
+        //the original position of the player
+
     }
 
     //when an incoming collider makes contact
@@ -61,7 +64,6 @@ public class PlayerControls : MonoBehaviour
         {
             //isGrounded equals true
             isGrounded = true;
-            Debug.Log("stay");
         }
     }
 
@@ -73,5 +75,11 @@ public class PlayerControls : MonoBehaviour
             //isGrounded equals true
             isGrounded = false;
         }
+    }
+
+    void GameOver()
+    {
+        //Gane is at a stopping state
+        Time.timeScale = 0;
     }
 }

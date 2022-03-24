@@ -195,7 +195,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2876814049339442106}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -253,7 +253,7 @@ PolygonCollider2D:
       - {x: 1.1999999, y: -0.17999999}
       - {x: 1.48, y: -0.17999999}
       - {x: 1.5, y: -0.16}
-      - {x: 1.4841534, y: -0.11415315}
+      - {x: 1.2768588, y: -0.012200773}
 --- !u!114 &7000001199746938542
 MonoBehaviour:
   m_ObjectHideFlags: 0

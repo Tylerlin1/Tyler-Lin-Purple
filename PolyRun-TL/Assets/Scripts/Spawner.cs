@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
         transform.position = new Vector3(15, -2.75f, 0);
     }
 
-    void InstantiateObject()
+    void InstantiateObjects()
     {
         Instantiate(challengeObject, transform.position, transform.rotation);
     }
