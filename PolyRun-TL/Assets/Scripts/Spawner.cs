@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(15, -2.75f, 0);
+        transform.position = new Vector3(0, -4, 0);
     }
 
     void InstantiateObjects()

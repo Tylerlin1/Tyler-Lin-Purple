@@ -42,7 +42,11 @@ public class PlayerControls : MonoBehaviour
         }
         //If the player position is less than
         //the original position of the player
-
+        if (transform.position.x < posX)
+        {
+            //Execute GameOver function
+            GameOver();
+        }
     }
 
     //when an incoming collider makes contact
@@ -54,6 +58,13 @@ public class PlayerControls : MonoBehaviour
         {
             //isGrounded equals true
             isGrounded = true;
+        }
+
+        //If colliders tag equals enemy
+        if (collision.collider.tag == "Enemy")
+        {
+            //Game Over function is called
+            GameOver();
         }
     }
 
@@ -79,7 +90,22 @@ public class PlayerControls : MonoBehaviour
 
     void GameOver()
     {
-        //Gane is at a stopping state
-        Time.timeScale = 0;
+        //Game Over function is called form the game manager
+        GameObject.Find("GameController").GetComponent<GameController>().GameOver();
+    }
+
+    //when a collider on another object is touching 
+    //this object's trigger
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //If triggers tag equals coin
+        if (collision.tag == "Coin")
+        {
+            //Call IncrementScore from
+            //Game Controller
+            GameObject.Find("GameController").GetComponent<GameController>().IncrementScore();
+            //Destroy object
+            Destroy(collision.gameObject);
+        }
     }
 }
