@@ -24,6 +24,8 @@ public class GameController : MonoBehaviour
     //is over
     [Header("Boolean")]
     public bool Done;
+
+    //public int cheat1 = 1; 
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,8 @@ public class GameController : MonoBehaviour
         //Variable pos2 equals to the pos1 plus any level by number of 2
         var pos2 = pos1 + ((Level % 2 == 0) ? Vector3.left : Vector3.forward) * 120;
         //if the level is by the number of two
-        if(Level % 2 == 0)
+        
+        if (Level % 2 == 0)
         {
             //Current position of the current cube based of the 3 axis of
             //pos2, pos1, and time
@@ -60,11 +63,21 @@ public class GameController : MonoBehaviour
             currentCube.transform.position = Vector3.Lerp(pos1, pos2, time);
         }
         //If left button is clicked 
+        //Debug.Log(currentCube.transform.position);
+        //Debug.Log(lastCube.transform.position);
+        //Debug.Log((currentCube.transform.position.x == lastCube.transform.position.x));
+        //Debug.Log(Mathf.Abs(currentCube.transform.position.z - lastCube.transform.position.z) <= 0.5);
+        //Debug.Log("/n/n");
+        //if (Input.GetMouseButtonDown(0) || (currentCube.transform.position.x == lastCube.transform.position.x && Mathf.Abs(currentCube.transform.position.z - lastCube.transform.position.z) <= 0.5))
         if (Input.GetMouseButtonDown(0))
         {
             //New block function
             //is called
-            Newblock();
+            //for (int i = 0; i <= cheat1 ; i++)
+            {
+                Newblock();
+            }
+            
         }
     }
 
@@ -99,7 +112,7 @@ public class GameController : MonoBehaviour
                 Done = true;
                 //Text is visible
                 text.gameObject.SetActive(true);
-                //Tet equals to the text of the Final score
+                //Text equals to the text of the Final score
                 //and which level is palyed
                 text.text = "Final Score: " + Level;
                 //Start Corountine function X
@@ -122,7 +135,7 @@ public class GameController : MonoBehaviour
         //set the color according to the color settings
         currentCube.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.HSVToRGB((Level / 100f) % 1f, 1f, 1f));
         //Add 1 to level
-        Level++;
+        text.text = "Current Level: " + Level++;
         //Camera position equals to the
         //position of the current cube
         Camera.main.transform.position = currentCube.transform.position + new Vector3(100, 100, 100);
