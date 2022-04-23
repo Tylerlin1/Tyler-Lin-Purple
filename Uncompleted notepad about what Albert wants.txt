@@ -1,0 +1,12 @@
+Classes are a way to organize complex data, fields are easy and simple ways to do this.
+Fields are basically variables that belong to that classes
+The blue and green things after public or private are fields, they are mostly "int", "bool" or "float".
+If private is used, the object won't be able to be accessed on unity by us. 
+If public is used, the object will be able to be accessed on  unity by is.
+
+
+
+
+
+
+The green things, blue things, yellow things and white things.
