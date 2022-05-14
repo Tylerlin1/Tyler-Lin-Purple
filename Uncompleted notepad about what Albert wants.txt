@@ -4,9 +4,12 @@ The blue and green things after public or private are fields, they are mostly "i
 If private is used, the object won't be able to be accessed on unity by us. 
 If public is used, the object will be able to be accessed on  unity by is.
 
-
-
-
-
+	   scope vartype varname
+Definition public bool variable;
+Initilization 
+Assigning 
+Compare < > == <= >=
 
 The green things, blue things, yellow things and white things.
+
+
