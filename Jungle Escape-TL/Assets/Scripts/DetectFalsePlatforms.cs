@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DetectFalsePlatforms : MonoBehaviour
 {
-    public bool hit;
+    bool hit;
 
     void Update()
     {
-
+        hit = Physics.Raycast(transform.forward, Vector3.forward, 5f);
     }
 }
