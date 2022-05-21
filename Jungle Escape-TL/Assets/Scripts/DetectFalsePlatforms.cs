@@ -9,19 +9,24 @@ public class DetectFalsePlatforms : MonoBehaviour
     void Update()
     {
         Vector3 origin = GameObject.Find("Player").transform.position;
-        hit = Physics.Raycast(origin, transform.forward, 1.5f, 1);
+        hit = Physics.Raycast(origin, transform.forward, 1.5f, 256);
         if (hit)
+        {
+
+            Debug.LogWarning("Not safe!"); 
+        }
+        else
         {
             Debug.Log("Safe!");
         }
 
-        RaycastHit outhit;
+        /*RaycastHit outhit;
         hit = Physics.Raycast(origin, transform.forward,out outhit, 1.5f, ~8);
         Debug.DrawRay(origin, transform.forward * 1.5f, Color.blue);
         if (hit)
         {
             Debug.LogWarning("Not safe!");
             //Debug.Log(outhit.transform.name);
-        }
+        }*/
     }
 }
