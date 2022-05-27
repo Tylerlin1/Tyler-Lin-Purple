@@ -12,4 +12,12 @@ Compare < > == <= >=
 
 The green things, blue things, yellow things and white things.
 
+I couldn't destroy the door in my game so I asked Albert for help but he didn't really. Albert told me that there were 2 ways and I thought one was too hard so I thought of another one but forgot how to do it so he told me to search it up on google(he had to use his big brain to make me write this).
+I searched it up on google and found the answer(how to find a specific game object in unity).
+I was being stupid and made the game object called hand instead of door.
+
+GameObject.Find
+
+Making a variable with a public scope then adding the game object through unity.
+
 

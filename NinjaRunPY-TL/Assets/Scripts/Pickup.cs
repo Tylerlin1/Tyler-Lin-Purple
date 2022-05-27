@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+
+    public GameObject kk;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //kk = GameObject.Find("door");
     }
 
     // Update is called once per frame
@@ -18,6 +20,11 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("coin"))
+        {
+            Destroy(other.gameObject);
+
+            Destroy(GameObject.Find("door"));
+        }
     }
 }
