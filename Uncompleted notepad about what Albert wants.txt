@@ -20,4 +20,10 @@ GameObject.Find
 
 Making a variable with a public scope then adding the game object through unity.
 
+gameObject is not a function
+hover over words to answer Albert's questions
+void is return type
+
+
+
 
