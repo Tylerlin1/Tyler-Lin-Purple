@@ -25,6 +25,10 @@ public class EnemyMovement : MonoBehaviour
             xDirection = -1;
             enemyRigidbody.AddForce(Vector2.left * xForce);
         }
+        if(transform.position.y >= 4)
+        {
+            enemyRigidbody.AddForce(Vector2.down * yForce);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
