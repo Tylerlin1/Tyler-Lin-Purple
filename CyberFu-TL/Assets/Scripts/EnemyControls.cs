@@ -11,10 +11,10 @@ public class EnemyControls : MonoBehaviour
     private Animator animatorEnemy;
     private Rigidbody rigidbodyEnemy;
     private Transform target;
-    private bool isFollowingTarget;
-    private bool isAttackingTarget;
-    private float currentAttackingTime;
-    private float maxAttackingTime = 2f;
+    public bool isFollowingTarget;
+    public bool isAttackingTarget;
+    public float currentAttackingTime;
+    public float maxAttackingTime = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +41,12 @@ public class EnemyControls : MonoBehaviour
     {
         if (!isFollowingTarget)
         {
-            return;
+            rigidbodyEnemy.isKinematic = true;
         }
 
         if (Vector3.Distance(transform.position, target.position) >= attackingDistance)
         {
+            rigidbodyEnemy.isKinematic = false;
             direction = target.position - transform.position;
             direction.y = 0;
 
@@ -59,6 +60,7 @@ public class EnemyControls : MonoBehaviour
         }
         else if(Vector3.Distance(transform.position, target.position) <= attackingDistance)
         {
+            rigidbodyEnemy.isKinematic = false;
             rigidbodyEnemy.velocity = Vector3.zero;
             animatorEnemy.SetBool("Walk", false);
             isFollowingTarget = false;
@@ -77,14 +79,19 @@ public class EnemyControls : MonoBehaviour
 
         if(currentAttackingTime > maxAttackingTime)
         {
+            EnemyAttack(Random.Range(1, 7)); 
             currentAttackingTime = 0f;
-            animatorEnemy.SetTrigger("Attack1");
         }
 
-        if (Vector3.Distance(transform.position, target.position) > attackingDistance + chasingPlayer)
+        if (Vector3.Distance(transform.position, target.position) > attackingDistance)
         {
             isAttackingTarget = false;
             isFollowingTarget = true;
+        }
+
+        if(isAttackingTarget == true)
+        {
+            isFollowingTarget = false;
         }
     }
 
@@ -103,6 +110,18 @@ public class EnemyControls : MonoBehaviour
         if(attack == 3)
         {
             animatorEnemy.SetTrigger("Attack3");
+        }
+        if(attack == 4)
+        {
+            animatorEnemy.SetTrigger("Attack4");
+        }
+        if(attack == 5)
+        {
+            animatorEnemy.SetTrigger("Attack5");
+        }
+        if(attack == 6)
+        {
+            animatorEnemy.SetTrigger("Attack6");
         }
     }
 }
