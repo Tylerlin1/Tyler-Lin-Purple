@@ -33,6 +33,11 @@ public class PlayerControls : MonoBehaviour
 
     private Rigidbody myRigidBody;
 
+    public Vector3 bOV(float x, float y)
+    {
+        return new Vector3(x, y) + transform.position;
+        
+    }
     void Start() {
         // currentLevel and score are initialized with values on Awake
         currentLevel = 1;
@@ -86,38 +91,28 @@ public class PlayerControls : MonoBehaviour
             Instantiate(projectile, transform.position, transform.rotation);
             if(currentLevel >= 3)
             {
-                Vector3 rightOffset = new Vector3(0.2f, 0, 0);
-                Vector3 leftOffset = new Vector3(-0.2f, 0, 0);
-                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
-                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                Instantiate(projectile, bOV(.2f,0), transform.rotation);
+                Instantiate(projectile, bOV(-.2f,0), transform.rotation);
             }
             if(currentLevel >= 5)
             {
-                Vector3 rightrightOffset = new Vector3(0.4f, 0, 0);
-                Vector3 leftleftOffset = new Vector3(-0.4f, 0, 0);
-                Instantiate(projectile, transform.position + rightrightOffset, transform.rotation);
-                Instantiate(projectile, transform.position + leftleftOffset, transform.rotation);
+                Instantiate(projectile, bOV(.4f,0), transform.rotation);
+                Instantiate(projectile, bOV(-.4f,0), transform.rotation);
             }
             if (currentLevel >= 7)
             {
-                Vector3 rightrightrightOffset = new Vector3(0.6f, 0, 0);
-                Vector3 leftleftleftOffset = new Vector3(-0.6f, 0, 0);
-                Instantiate(projectile, transform.position + rightrightrightOffset, transform.rotation);
-                Instantiate(projectile, transform.position + leftleftleftOffset, transform.rotation);
+                Instantiate(projectile, bOV(0,2), transform.rotation);
+                Instantiate(projectile, bOV(0,-2), transform.rotation);
             }
             if (currentLevel >= 9)
             {
-                Vector3 rightrightrightrightOffset = new Vector3(0.8f, 0, 0);
-                Vector3 leftleftleftleftOffset = new Vector3(-0.8f, 0, 0);
-                Instantiate(projectile, transform.position + rightrightrightrightOffset, transform.rotation);
-                Instantiate(projectile, transform.position + leftleftleftleftOffset, transform.rotation);
+                Instantiate(projectile, bOV(0, 4), transform.rotation);
+                Instantiate(projectile, bOV(0,-4), transform.rotation);
             }
             if (currentLevel >= 11)
             {
-                Vector3 erightrightrightOffset = new Vector3(0.10f, 0, 0);
-                Vector3 eleftleftleftOffset = new Vector3(-0.10f, 0, 0);
-                Instantiate(projectile, transform.position + erightrightrightOffset, transform.rotation);
-                Instantiate(projectile, transform.position + eleftleftleftOffset, transform.rotation);
+                Instantiate(projectile, bOV(.6f, 6), transform.rotation);
+                Instantiate(projectile, bOV(-.6f, -6), transform.rotation);
             }
 
             /*****************************\
