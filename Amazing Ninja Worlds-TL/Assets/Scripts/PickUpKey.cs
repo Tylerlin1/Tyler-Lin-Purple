@@ -23,6 +23,10 @@ public class PickUpKey : MonoBehaviour
         allParticles.Play();
         //HealthBar.GetComponent<LifeHUD>().HealPlayer();
         //Debug.Log("Hit!");
+        if (other.tag == "Player")
+        {
+            Debug.Log("Yay!");
+            HealthBar.GetComponent<LifeHUD>().HealPlayer();
+        }
     }
-
 }
