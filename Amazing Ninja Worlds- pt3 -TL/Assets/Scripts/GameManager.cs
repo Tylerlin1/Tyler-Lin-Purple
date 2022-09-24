@@ -29,7 +29,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
+        if (Input.GetButton("Cancel"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void GameOver()
