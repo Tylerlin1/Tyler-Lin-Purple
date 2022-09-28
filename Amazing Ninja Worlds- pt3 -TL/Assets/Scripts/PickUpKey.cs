@@ -25,7 +25,7 @@ public class PickUpKey : MonoBehaviour
             m_particle.Stop();
             allParticles.Play();
             collectSound.Play();
-            //Debug.Log("Hit!");
+            Debug.Log("Hit!");
         }
     }
 
