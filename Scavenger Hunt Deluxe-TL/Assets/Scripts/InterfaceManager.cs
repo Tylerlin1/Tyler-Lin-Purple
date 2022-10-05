@@ -62,5 +62,7 @@ public class InterfaceManager : MonoBehaviour
     {
         randomSpawn.GetComponent<RandomSpawn>().DistributeCollectibles();
         npc.GetComponent<DialogOpen>().coinsScattered();
+
+
     }
-}
+}   

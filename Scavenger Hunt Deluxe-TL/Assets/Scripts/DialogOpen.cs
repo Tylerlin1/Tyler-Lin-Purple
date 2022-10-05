@@ -60,7 +60,55 @@ public class DialogOpen : MonoBehaviour
 
     public void searchDialog()
     {
-        dialog = "Hi! Can you help me find my " + collectibles[clue] + "?";
+        if (clue == 0)
+        {
+            dialog = "Hi! Can you help me find my film to watch my movie " + "?";
+        }
+
+        if (clue == 1)
+        {
+            dialog = "Hi! Can you help me find my balloons for a gift " + "?";
+        }
+
+        if (clue == 2)
+        {
+            dialog = "Hi! My friend is dying! Can you help me find my life saver to save my friend " + "?";
+        }
+
+        if (clue == 3)
+        {
+            dialog = "Hi! I want to practice shooting, can you help me find my bull's eye " + "?";
+        }
+
+        if (clue == 4)
+        {
+            dialog = "Hi! I suddenly feel like smoking, can you help me find my pipe " + "?";
+        }
+
+        if (clue == 5)
+        {
+            dialog = "Hi! Can you help me find my key to my house " + "?";
+        }
+
+        if (clue == 6)
+        {
+            dialog = "Hi! I'm very hunger and would like to eat. Can you help me find my fish " + "?";
+        }
+
+        if (clue == 7)
+        {
+            dialog = "Hi! I'm trying to make some money, can you help me find my bird house " + "?";
+        }
+
+        if (clue == 8)
+        {
+            dialog = "Hi! Can you help me find my airhorn to annoy people " + "?";
+        }
+
+        if (clue == 9)
+        {
+            dialog = "Hi! I'm trying to show-off and do magic but unfortunately, I lost my my hat. Can you help me find my magic hat " + "?";
+        }
     }
 
 }
