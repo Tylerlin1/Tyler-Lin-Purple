@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class HUD : MonoBehaviour
 {
+    public Level level;
+    public GameOver gameOver;
     public enum LevelType
     {
         TIMER,
@@ -17,8 +19,6 @@ public class HUD : MonoBehaviour
     public int score1Star;
     public int score2Star;
     public int score3Star;
-
-    public Level level;
 
     public Text remainingText;
     public Text remainingSubtext;
@@ -100,7 +100,7 @@ public class HUD : MonoBehaviour
                 targetSubtext.text = "Target Score";
                 break;
             case Level.LevelType.OBSTACLE:
-                remainingSubtext.text = "Moves REmaining";
+                remainingSubtext.text = "Moves Remaining";
                 targetSubtext.text = "Dishes Remaining";
                 break;
             case Level.LevelType.TIMER:
@@ -112,12 +112,17 @@ public class HUD : MonoBehaviour
 
     public void OnGameWin(int score)
     {
-        isGameOver = true;
+        gameOver.ShowWin(score, starIndex);
+
+        if (starIndex > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name, 0))
+        {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, starIndex);
+        }
     }
 
     public void OnGameLose()
     {
-        isGameOver = false;
+        gameOver.ShowLose();
     }
 
     // Update is called once per frame

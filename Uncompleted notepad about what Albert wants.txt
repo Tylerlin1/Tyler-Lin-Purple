@@ -1,3 +1,11 @@
+10/13
+remembers number of stars on home page
+be able to go back to level select
+time remaining on lvl 3
+
+
+
+
 Classes are a way to organize complex data, fields are easy and simple ways to do this.
 Fields are basically variables that belong to that classes
 The blue and green things after public or private are fields, they are mostly "int", "bool" or "float".
