@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelSelect : MonoBehaviour
 {
+    public void OnButtonPress(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
+    }
+
     [System.Serializable]
     public struct ButtonPlayerPrefs
     {
@@ -20,7 +25,7 @@ public class LevelSelect : MonoBehaviour
             int score = PlayerPrefs.GetInt(buttons[i].playerPrefKey, 0);
             for (int starIndex = 1; starIndex <= 3; starIndex++)
             {
-                Transform star = buttons[i].gameObject.transform.Find("star + starIndex");
+                Transform star = buttons[i].gameObject.transform.Find("star" + starIndex);
                 if(starIndex <= score)
                 {
                     star.gameObject.SetActive(true);
@@ -31,11 +36,6 @@ public class LevelSelect : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void OnButtonPress(string levelName)
-    {
-        SceneManager.LoadScene(levelName);
     }
     // Update is called once per frame
     void Update()
