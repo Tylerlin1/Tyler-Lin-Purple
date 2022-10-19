@@ -25,7 +25,7 @@ public class LevelSelect : MonoBehaviour
             int score = PlayerPrefs.GetInt(buttons[i].playerPrefKey, 0);
             for (int starIndex = 1; starIndex <= 3; starIndex++)
             {
-                Transform star = buttons[i].gameObject.transform.Find("star" + starIndex);
+                Transform star = buttons[i].gameObject.transform.Find("Star" + starIndex);
                 if(starIndex <= score)
                 {
                     star.gameObject.SetActive(true);

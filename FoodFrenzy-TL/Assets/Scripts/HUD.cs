@@ -120,9 +120,14 @@ public class HUD : MonoBehaviour
         }
     }
 
-    public void OnGameLose()
+    public void OnGameLose(int score)
     {
-        gameOver.ShowLose();
+        gameOver.ShowWin(score, starIndex);
+
+        if (starIndex > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name, 0))
+        {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, starIndex);
+        }
     }
 
     // Update is called once per frame

@@ -3,8 +3,8 @@
     public int numMoves;
     public GameGrid.PieceType[] obstacleTypes;
 
-    private int movesUsed = 0;
-    private int numObstaclesLeft;
+    public int movesUsed = 0;
+    public int numObstaclesLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +38,7 @@
 
         if (numMoves - movesUsed == 0 && numObstaclesLeft > 0)
         {
+            
             GameLose();
         }
     }

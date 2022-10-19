@@ -81,7 +81,7 @@ public class Level : MonoBehaviour
         }
         else
         {
-            hud.OnGameLose();
+            hud.OnGameLose(currentScore);
         }
     }
 }
