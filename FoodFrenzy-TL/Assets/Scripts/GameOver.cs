@@ -25,11 +25,13 @@ public class GameOver : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void ShowLose()
+    public void ShowLose(int score)
     {
         screenParent.SetActive(true);
         screenParent.SetActive(false);
         loseText.enabled = true;
+        scoreText.text = score.ToString();
+        scoreText.enabled = true;
 
         if (animator)
         {
@@ -39,11 +41,12 @@ public class GameOver : MonoBehaviour
 
     public void ShowWin(int score, int starCount)
     {
+        Debug.Log(score);
         screenParent.SetActive(true);
         scoreParent.SetActive(true);
         loseText.enabled = false;
         scoreText.text = score.ToString();
-        scoreText.enabled = false;
+        scoreText.enabled = true;
 
         if (animator)
         {
