@@ -222,10 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 581336197}
   hud: {fileID: 1325995675}
-  score1Star: 1000
-  score2Star: 2000
-  score3Star: 3000
-  numMoves: 1
+  score1Star: 10000
+  score2Star: 20000
+  score3Star: 30000
+  numMoves: 20
   obstacleTypes: 02000000
   movesUsed: 0
   numObstaclesLeft: 0

@@ -222,11 +222,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 581336197}
   hud: {fileID: 664916034}
-  score1Star: 1
-  score2Star: 2
-  score3Star: 3
-  timeInSeconds: 2
-  targetScore: 5000
+  score1Star: 10000
+  score2Star: 20000
+  score3Star: 30000
+  timeInSeconds: 300
+  targetScore: 10000
 --- !u!4 &245619826
 Transform:
   m_ObjectHideFlags: 0
