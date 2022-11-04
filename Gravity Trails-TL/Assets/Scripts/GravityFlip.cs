@@ -16,7 +16,7 @@ public class GravityFlip : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            avatarRigidbody.gravityScale += -1;
+            avatarRigidbody.gravityScale *= -1;
             Vector3 newDirection = transform.localScale;
             newDirection.y *= -1;
             transform.localScale = newDirection;
