@@ -18,7 +18,8 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        Debug.Log("xForce: " + xForce);
+        Debug.Log("yForce: " + yForce);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,10 +33,22 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "LeftWall")
         {
-            Debug.Log("h");
             Vector2 jumpForce = new Vector2(xForce, yForce);
+            enemyRigidbody.AddForce(jumpForce);
+        }
+
+        if (collision.gameObject.tag == "RightWall")
+        {
+            //enemyRigidbody.velocity.x*-1*xForce means that the enemyRigidbody.velocity.xForce becomes a negative number
+            Vector2 jumpForce = new Vector2(enemyRigidbody.velocity.x*-1*xForce, yForce);
+            enemyRigidbody.AddForce(jumpForce);
+        }
+
+        if(collision.gameObject.tag == "TopWall")
+        {
+            Vector2 jumpForce = new Vector2(-xForce, enemyRigidbody.velocity.y * -1 * yForce);
             enemyRigidbody.AddForce(jumpForce);
         }
     }

@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - ThrowingObject
   - Ground
+  - LeftWall
+  - RightWall
+  - TopWall
   layers:
   - Default
   - TransparentFX
