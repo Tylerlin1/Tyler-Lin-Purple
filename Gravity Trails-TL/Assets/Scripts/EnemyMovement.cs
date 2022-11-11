@@ -40,11 +40,12 @@ public class EnemyMovement : MonoBehaviour
                 }*/
         if (collision.gameObject.tag == "LeftWall")
         {
-            direction = true;
             if (direction == true)
             {
                 Vector2 jumpForce = new Vector2(xForce = 140, yForce);
                 enemyRigidbody.AddForce(jumpForce);
+                enemyRigidbody.velocity = new Vector2(0, enemyRigidbody.velocity.y);
+                direction = false;
             }
         }
 
@@ -53,18 +54,18 @@ public class EnemyMovement : MonoBehaviour
             /*            //enemyRigidbody.velocity.x*-1*xForce means that the enemyRigidbody.velocity.xForce becomes a negative number
                         Vector2 jumpForce = new Vector2(enemyRigidbody.velocity.x * -1 * xForce, yForce);
                         enemyRigidbody.AddForce(jumpForce);*/
-            direction = false;
-            if(direction == false)
+            if (direction == false)
             {
                 Vector2 jumpForce = new Vector2(xForce = -140, yForce);
                 enemyRigidbody.AddForce(jumpForce);
+                enemyRigidbody.velocity = new Vector2(0, enemyRigidbody.velocity.y);
+                direction = true;
             }
         }
-
-        if(collision.gameObject.tag == "TopWall")
+        if (collision.gameObject.tag == "TopWall")
         {
             Vector2 jumpForce = new Vector2(-xForce, enemyRigidbody.velocity.y * -1 * yForce);
             enemyRigidbody.AddForce(jumpForce);
-        }
+        } 
     }
 }
