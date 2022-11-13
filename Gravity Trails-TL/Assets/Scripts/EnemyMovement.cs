@@ -29,6 +29,10 @@ public class EnemyMovement : MonoBehaviour
             Vector2 jumpForce = new Vector2(xForce, yForce);
             enemyRigidbody.AddForce(jumpForce);
         }
+        if(collision.gameObject.tag == "SoonToBeF22Raptor")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
