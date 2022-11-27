@@ -29,9 +29,11 @@ public class EnemyMovement : MonoBehaviour
             Vector2 jumpForce = new Vector2(xForce, yForce);
             enemyRigidbody.AddForce(jumpForce);
         }
-        if(collision.gameObject.tag == "SoonToBeF22Raptor")
+        if(collision.gameObject.tag == "ThrowingObject")
         {
             Destroy(collision.gameObject);
+            Destroy(gameObject);
+            GameObject.FindGameObjectWithTag("Exit").GetComponent<Teleport>().enemyCount--;
         }
     }
 

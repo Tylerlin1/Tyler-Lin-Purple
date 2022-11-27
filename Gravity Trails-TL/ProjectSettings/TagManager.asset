@@ -11,6 +11,7 @@ TagManager:
   - RightWall
   - TopWall
   - SoonToBeF22Raptor
+  - Exit
   layers:
   - Default
   - TransparentFX

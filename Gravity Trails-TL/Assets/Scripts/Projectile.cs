@@ -10,10 +10,11 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         direction = GameObject.FindGameObjectWithTag("Player").GetComponent<Throwable>();
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<Throwable>().throwableCounter-- == 0)
-        {
-            DestroyThrowable();
-        }
+        /*        (GameObject.FindGameObjectWithTag("Player").GetComponent<Throwable>().throwableCounter-- == 0)*//*
+                {
+                    DestroyThrowable();
+                }*/
+        DestroyThrowable();
     }
 
     // Update is called once per frame
@@ -31,11 +32,5 @@ public class Projectile : MonoBehaviour
     private void DestroyThrowable()
     {
             StartCoroutine(ExecuteAfterTime(3.5f));
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
-        Destroy(collision.gameObject);
     }
 }
