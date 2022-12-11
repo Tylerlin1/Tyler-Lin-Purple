@@ -10,10 +10,6 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         direction = GameObject.FindGameObjectWithTag("Player").GetComponent<Throwable>();
-        /*        (GameObject.FindGameObjectWithTag("Player").GetComponent<Throwable>().throwableCounter-- == 0)*//*
-                {
-                    DestroyThrowable();
-                }*/
         DestroyThrowable();
     }
 
