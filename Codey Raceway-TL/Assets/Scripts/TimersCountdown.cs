@@ -21,15 +21,27 @@ public class TimersCountdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalLapTime -= Time.deltaTime;
-        totalCountdownTime -= Time.deltaTime;
-
         lapTime.text = Mathf.Round(totalLapTime).ToString();
         startCountdown.text = Mathf.Round(totalCountdownTime).ToString();
 
         if(totalCountdownTime > 0)
         {
-            totalCountdownTime - Time.deltaTime
+            totalCountdownTime -= Time.deltaTime;
+            startCountdown.text = Mathf.Round(totalCountdownTime).ToString();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CodeyMove>().Speed = 0;
+        }
+
+        if(totalCountdownTime <= 0)
+        {
+            startCountdown.text = ("");
+            totalLapTime -= Time.deltaTime;
+            lapTime.text = Mathf.Round(totalLapTime).ToString();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CodeyMove>().Speed = 300;
+        }
+
+        if(totalLapTime < 0)
+        {
+            print("Time is up!");
         }
     }
 }
