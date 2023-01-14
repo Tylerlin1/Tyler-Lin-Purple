@@ -13,6 +13,7 @@ public class Shape : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("hi");
         //Rotation of the rigidbody
         //at a random range
         rb.rotation = Random.Range(0f, 360f);
