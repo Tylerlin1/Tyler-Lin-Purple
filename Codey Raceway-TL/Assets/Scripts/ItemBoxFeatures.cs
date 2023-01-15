@@ -10,7 +10,7 @@ public class ItemBoxFeatures : MonoBehaviour
     void FixedUpdate()
     {
         //Rotate the object on the x axis
-        transform.Rotate(Vector3.forward, Time.deltaTime * rotationSpeed);
+        transform.Rotate(new Vector3(1, 0, 1), Time.deltaTime * rotationSpeed);
     }
 
     private void OnTriggerEnter(Collider other)

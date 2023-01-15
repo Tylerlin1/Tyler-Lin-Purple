@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemBoxSpawner : MonoBehaviour
 {
 
+    public float seconds = 5;
     public GameObject ItemBox;
 
     public int numberOfBoxes;
@@ -14,10 +15,9 @@ public class ItemBoxSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("hi");
+        gameObject.SetActive(true);
         for (int i = 0; i < numberOfBoxes; i++)
         {
-            Debug.Log(transform.position);
             GameObject ItemBoxClone = Instantiate(ItemBox,
                 new Vector3(
                     transform.position.x + modifyXPosition*i,
@@ -29,8 +29,17 @@ public class ItemBoxSpawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.gameObject.tag == "Player")
+        {
+             gameObject.SetActive(false);
+        }
+        Invoke("ItemBoxRespawn", 5f);
+    }
+
+    private void ItemBoxRespawn()
+    {
+        gameObject.SetActive(true);
     }
 }
